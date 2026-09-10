@@ -90,7 +90,7 @@ The database uses PostgreSQL. The main tables are:
 | `flags`               | Tracks flags on images. Prevents duplicate flags.                                      |
 | `unconfirmed_uploads` | Tracks uploads that have a presigned URL but have not yet been confirmed.              |
 
-### Relationships
+### Key Relationships
 - `images.user_id` references `users.id` with `ON DELETE CASCADE`.
 - `likes.user_id` references `users.id` with `ON DELETE CASCADE`.
 - `likes.image_id` references `images.id` with `ON DELETE CASCADE`.
