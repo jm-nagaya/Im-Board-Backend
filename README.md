@@ -105,7 +105,7 @@ The database uses PostgreSQL. The main tables are:
 - `unconfirmed_uploads` has a unique constraint on `user_id` to prevent multiple pending uploads.
 
 ## Security
-- All API requests (except `GET /api/images`) are authenticated using Cognito access tokens verified with `aws-jwt-verify`.
+- All API requests are authenticated using Cognito access tokens verified with `aws-jwt-verify`.
 - File uploads are validated by size, type, and magic bytes.
 - SQL queries use parameterized statements to prevent injection.
 - Messages are sanitized using DOMPurify with no allowed HTML tags.
