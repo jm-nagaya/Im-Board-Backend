@@ -126,7 +126,8 @@ export const imageService = {
                     WHERE f.image_id = i.id and f.user_id = $1
                 ) AS flagged_by_user
                 FROM images i
-                WHERE i.flags < 3`,
+                WHERE i.flags < 3
+                AND created_at >= NOW() - INTERVAL '1 day'`,
                 [userId]
         );
         return result.rows;
